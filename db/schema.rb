@@ -11,14 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-#<<<<<<< HEAD
-#ActiveRecord::Schema.define(version: 20150212103901) do
-#=======
-#ActiveRecord::Schema.define(version: 20150212105344) do
-#>>>>>>> new_branch
+ActiveRecord::Schema.define(version: 20150212112314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "books", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "active"
+  end
 
   create_table "microposts", force: true do |t|
     t.string   "content"
@@ -29,6 +34,12 @@
   end
 
   add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at", using: :btree
+
+  create_table "new_table_statuses", force: true do |t|
+    t.string  "status"
+    t.string  "message"
+    t.integer "user_id"
+  end
 
   create_table "relationships", force: true do |t|
     t.integer  "follower_id"
@@ -48,6 +59,7 @@
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "inserted_at"
+    t.string   "title"
   end
 
   create_table "users", force: true do |t|
@@ -59,6 +71,7 @@
     t.string   "remember_token"
     t.boolean  "admin"
     t.string   "city"
+    t.string   "country"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
