@@ -1,5 +1,5 @@
 class AddColumnCityToStudents < ActiveRecord::Migration
   def change
-  	add_column :studens :city, :string
+  	add_column :students, :city, :string
   end
 end

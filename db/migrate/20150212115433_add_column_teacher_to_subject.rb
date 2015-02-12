@@ -1,5 +1,5 @@
 class AddColumnTeacherToSubject < ActiveRecord::Migration
   def change
-  	add_column :subject, :teacher, :string
+  	add_column :subjects, :teacher, :string
   end
 end
