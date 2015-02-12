@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150212112634) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -60,12 +61,15 @@ ActiveRecord::Schema.define(version: 20150212112634) do
     t.datetime "updated_at"
     t.datetime "inserted_at"
     t.string   "title"
+<<<<<<< HEAD
   end
 
   create_table "students", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+=======
+>>>>>>> branch2
   end
 
   create_table "users", force: true do |t|
